@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marcgar2 <marcgar2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/02/27 22:25:15 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/02/28 15:06:59 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,26 @@ typedef struct s_display
 
 typedef struct s_fractal
 {
-	char	*name; //Fractal escogido
-	void	*mlx_connect; //Hace ref a mlx_init()
+	char		*name; //Fractal escogido
+	void		*mlx_connect; //Hace ref a mlx_init()
+	void		*mlx_window; //Hace ref a mlx_new_window()
+	t_display	img; //Referencia a la lista anterior
+	double		esc_value; //Valor de escape
+	int			iter_def; //Render speed
+	double		shift_x;
+	double		shift_y;
+	double		zoom;
+	double		julia_x;
+	double		julia_y;
 }	t_fractal;
+
+
+//WINDOW EVENTS
+int close_win(t_fractal *fractal);
+int key_input(int keysym, t_fractal *fractal);
+int mouse_input(int button, int x, int y, t_fractal *fractal);
+int julia_track(int x, int y, t_fractal *fractal);
+
+//UTILS
+int	ft_strncmp(char *s1, char *s2, int n);
 #endif
