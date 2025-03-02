@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/02/28 15:06:59 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/02 15:33:51 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,9 @@ int close_win(t_fractal *fractal);
 int key_input(int keysym, t_fractal *fractal);
 int mouse_input(int button, int x, int y, t_fractal *fractal);
 int julia_track(int x, int y, t_fractal *fractal);
+
+//INIT EVENTS
+void    fractal_init(t_fractal *fractal);
 
 //UTILS
 int	ft_strncmp(char *s1, char *s2, int n);
