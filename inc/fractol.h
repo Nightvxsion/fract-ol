@@ -77,17 +77,19 @@ typedef struct s_fractal
 
 
 //WINDOW EVENTS
-int close_win(t_fractal *fractal);
-int key_input(int keysym, t_fractal *fractal);
-int mouse_input(int button, int x, int y, t_fractal *fractal);
-int julia_track(int x, int y, t_fractal *fractal);
+int			close_win(t_fractal *fractal);
+int			key_input(int keysym, t_fractal *fractal);
+int			mouse_input(int button, int x, int y, t_fractal *fractal);
+int			julia_track(int x, int y, t_fractal *fractal);
 
 //INIT EVENTS
-void    fractal_init(t_fractal *fractal);
+void		fractal_init(t_fractal *fractal);
 
 //UTILS
-int	ft_strncmp(char *s1, char *s2, int n);
+int			ft_strncmp(char *s1, char *s2, int n);
 
 //MATH UTILS
-double map(double unscaled, double new_min, double new_max, double old_max);
+double		map(double unscaled, double new_min, double new_max, double old_max);
+t_complex	complex_sum(t_complex z1, t_complex z2);
+t_complex	sqre_complex(t_complex z);
 #endif
