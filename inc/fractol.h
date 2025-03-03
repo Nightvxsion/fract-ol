@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/02 15:33:51 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/03 15:31:03 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,7 @@ void    fractal_init(t_fractal *fractal);
 
 //UTILS
 int	ft_strncmp(char *s1, char *s2, int n);
+
+//MATH UTILS
+double map(double unscaled, double new_min, double new_max, double old_max);
 #endif
