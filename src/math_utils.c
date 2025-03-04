@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:09:27 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/03 15:43:32 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/04 07:51:53 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,13 @@ t_complex complex_sum(t_complex z1, t_complex z2)
 
     res.x = z1.x + z2.x;
     res.y = z1.y + z2.y;
+}
+
+t_complex square_sum(t_complex z)
+{
+    t_complex res;
+
+    res.x = (z.x * z.x) - (z.y * z.y);
+    res.y = 2 * z.x * z.y;
+    return (res);
 }
