@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 13:20:27 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/03 15:23:34 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/04 20:01:36 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int julia_track(int x, int y, t_fractal *fractal)
 {
     if (!ft_strncmp(fractal->name, "julia", 5))
     {
-        fractal->julia_x = (map(x, -2, +2, 0, WIDTH) * fractal->zoom) + fractal->shift_x;
-        fractal->julia_y = (map(y, +2, -2, 0, HEIGHT) * fractal->zoom) + fractal->shift_y;
+        fractal->julia_x = (map(x, -2, +2, WIDTH) * fractal->zoom) + fractal->shift_x;
+        fractal->julia_y = (map(y, +2, -2, HEIGHT) * fractal->zoom) + fractal->shift_y;
         //fractal_render?¿??¿¿
     }
     return (0);

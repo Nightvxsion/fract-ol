@@ -3,5 +3,6 @@
         "mlx_int.h": "c",
         "fractol.h": "c",
         "x.h": "c"
-    }
+    },
+    "editor.insertSpaces": false
 }
