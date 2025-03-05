@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 22:15:04 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/05 23:01:40 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ typedef struct s_fractal
 //WINDOW EVENTS
 int 		close_win(t_fractal *fractal);
 int 		key_input(int keysym, t_fractal *fractal);
-int 		mouse_input(int button, t_fractal *fractal);
+int 		mouse_input(int button, int x, int y, t_fractal *fractal);
 int 		julia_track(int x, int y, t_fractal *fractal);
 
 //INIT EVENTS

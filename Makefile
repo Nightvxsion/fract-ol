@@ -2,7 +2,7 @@ NAME = fractol
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror 
 MLX_DIR = ./minilibx-linux
-LIBS = -L$(MLX_DIR) -Lminilibx-linux -lmlx_Linux -lX11 -lXext 
+LIBS = -L$(MLX_DIR) -lmlx -lX11 -lXext 
 
 SRCS = src/main.c src/window_events.c src/init_fractal.c src/math_utils.c src/render.c src/utils.c
 OBJS = $(SRCS:.c=.o)
