@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 13:20:27 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 08:42:18 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:14:55 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int key_input(int keysym, t_fractal *fractal)
     return (0);
 }
 
-int mouse_input(int button, int x, int y, t_fractal *fractal)
+int mouse_input(int button, t_fractal *fractal)
 {
     if (button == Button5)
         fractal->zoom *= 0.95;

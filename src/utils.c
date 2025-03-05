@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:58:57 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 08:59:54 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:22:21 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ double atodbl(char *s)
     while ((*s >= 9 && *s <= 13) || 32 == *s)
         ++s;
     while (*s == '+' || *s == '-')
-        if ('-' == s++)
+        if ('-' == *s++)
             flag = -flag;
     while (*s != '.' && *s)
         int_part = (int_part * 10) + (*s++ - 48);
@@ -47,4 +47,15 @@ double atodbl(char *s)
         fraction_part = fraction_part + (*s++ - 48) * pow;
     }
     return ((int_part + fraction_part) * flag);
+}
+
+void	putstr_fd(char *s, int fd)
+{
+	if (NULL == s || fd < 0)
+		return ;
+	if (*s != '\0')
+	{
+		write(fd, s, 1);
+		putstr_fd(s + 1, fd);
+	}
 }

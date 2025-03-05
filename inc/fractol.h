@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 09:09:45 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/05 22:15:04 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 # include <math.h> //math operations
 # include <X11/X.h> //Keys signals and events
 # include <X11/keysym.h> //Keyboard signals
-# include "minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 
 //Just a error msg
-#define ERROR_MSG "Enter \n\t"./fractol mandelbrot\" or \n\t"./fractol julia <val_1> <val_2>\"\n"
+#define ERROR_MSG "Enter \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <val_1> <val_2>\"\n"
 
 //Window size
 #define WIDTH	800
@@ -79,7 +79,7 @@ typedef struct s_fractal
 //WINDOW EVENTS
 int 		close_win(t_fractal *fractal);
 int 		key_input(int keysym, t_fractal *fractal);
-int 		mouse_input(int button, int x, int y, t_fractal *fractal);
+int 		mouse_input(int button, t_fractal *fractal);
 int 		julia_track(int x, int y, t_fractal *fractal);
 
 //INIT EVENTS
@@ -88,6 +88,7 @@ void    	fractal_init(t_fractal *fractal);
 //UTILS
 int			ft_strncmp(char *s1, char *s2, int n);
 double		atodbl(char *s);
+void	putstr_fd(char *s, int fd);
 
 //MATH UTILS
 double		map(double unscaled, double new_min, double new_max, double old_max);
