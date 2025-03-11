@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:58:57 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 22:22:21 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 08:04:30 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ double atodbl(char *s)
         if ('-' == *s++)
             flag = -flag;
     while (*s != '.' && *s)
-        int_part = (int_part * 10) + (*s++ - 48);
+        int_part = (int_part * 10) + (*s++ - '0');
     if (*s == '.')
-        s++;
+        ++s;
     while (*s)
     {
         pow /= 10;
-        fraction_part = fraction_part + (*s++ - 48) * pow;
+        fraction_part = fraction_part + (*s++ - '0') * pow;
     }
     return ((int_part + fraction_part) * flag);
 }

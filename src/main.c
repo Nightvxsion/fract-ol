@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 21:26:30 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 22:13:36 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 08:12:20 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int main(int argc, char **argv)
 {
 	t_fractal frac;
 
-	if ((argc == 2 && !ft_strncmp(argv[1], "mandelbrot", 10)) || (argc == 4 && !ft_strncmp(argv[1], "julia", 5)))
+	if (((argc == 2 && ft_strncmp(argv[1], "mandelbrot", 10) == 0)) 
+		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 5) == 0))
 	{
 		frac.name = argv[1];
 		if (!ft_strncmp(frac.name, "julia", 5))
