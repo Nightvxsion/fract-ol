@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 21:26:30 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/11 08:12:20 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:01:58 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ int main(int argc, char **argv)
 	if (((argc == 2 && ft_strncmp(argv[1], "mandelbrot", 10) == 0)) 
 		|| (argc == 4 && !ft_strncmp(argv[1], "julia", 5) == 0))
 	{
-		frac.name = argv[1];
-		if (!ft_strncmp(frac.name, "julia", 5))
-		{
-			frac.julia_x = atodbl(argv[2]);
-			frac.julia_y = atodbl(argv[3]);
-		}
+		check_julia(&frac, argv, argc);
 		fractal_init(&frac);
 		fractal_render(&frac);
 		mlx_loop(frac.mlx_connect);

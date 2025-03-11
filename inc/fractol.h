@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 22:25:15 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 23:01:40 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:03:10 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 
 //Just a error msg
 #define ERROR_MSG "Enter \n\t\"./fractol mandelbrot\" or \n\t\"./fractol julia <val_1> <val_2>\"\n"
+# define ERROR_MSG2 "Please enter correct value for julia \n\t\"./fractol\
+ mandelbrot\" or \n\t\"./fractol julia <number value 1> <number value 2>\"\n"
 
 //Window size
 #define WIDTH	800
@@ -88,7 +90,8 @@ void    	fractal_init(t_fractal *fractal);
 //UTILS
 int			ft_strncmp(char *s1, char *s2, int n);
 double		atodbl(char *s);
-void	putstr_fd(char *s, int fd);
+void		putstr_fd(char *s, int fd);
+void    	check_julia(t_fractal *fractal, char **argv, int argc);
 
 //MATH UTILS
 double		map(double unscaled, double new_min, double new_max, double old_max);

@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:58:57 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/11 08:04:30 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:03:13 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,32 @@ void	putstr_fd(char *s, int fd)
 		write(fd, s, 1);
 		putstr_fd(s + 1, fd);
 	}
+}
+
+void    check_julia(t_fractal *fractal, char **argv, int argc)
+{
+    int i;
+
+    i = 0;
+    fractal->name = argv[1];
+    if ((argc == 4 && ft_strncmp(argv[1], "julia", 5)) == 0)
+    {
+        while (argv[2][i] && argv[3][i])
+        {
+            if (((argv[2][i] >= '0' && argv[2][i] <= '9')
+                || argv[2][i] == '.' || argv[2][i] == '+' || argv[2][i] == '-')
+                && (argv[3][i] >= '0' && argv[3][i] <= '9')
+                || argv[3][i] == '.' || argv[3][i] == '+' || argv[3][i] == '-')
+                {
+                    fractal->julia_x = atodbl(argv[2]);
+                    fractal->julia_y = atodbl(argv[3]);
+                }
+                else
+                {
+                    putstr_fd(ERROR_MSG2, STDERR_FILENO);
+                    exit(EXIT_FAILURE);
+                }
+                i++;
+        }
+    }
 }

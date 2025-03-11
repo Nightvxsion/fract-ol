@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/02 14:10:24 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/11 08:05:52 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:06:35 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void fractal_init_conf(t_fractal *fractal)
 {
     fractal->esc_value = 4;
     fractal->iter_def = 100;
-    fractal->zoom = 1.0;
     fractal->shift_x = 0.0;
     fractal->shift_y = 0.0;
+    fractal->zoom = 1.0;
 }
 
 static void events_conf(t_fractal *fractal)

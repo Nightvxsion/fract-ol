@@ -6,7 +6,7 @@
 /*   By: marcgar2 <marcgar2@student.42madrid.org    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 09:10:27 by marcgar2          #+#    #+#             */
-/*   Updated: 2025/03/05 09:10:53 by marcgar2         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:05:07 by marcgar2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static void handle_pixels(int x, int y, t_fractal *frac)
         }
         ++i;
     }
-    pixel_put(x, y, &frac->img, WHITE);
+    pixel_put(x, y, &frac->img, PSYCHO_PURPLE);
 }
 
 void    fractal_render(t_fractal *frac)
